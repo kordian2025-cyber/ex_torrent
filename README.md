@@ -1,63 +1,69 @@
-# Wtyczka EX-Torrenty
+# EX-Torrenty Plugin
 
-**Wersja:** 3.3
-**Autor:** KordianJ (5c0rp10n) kordian2025@gmail.com
-**Współautor:** powerzasty
-**Podziękowania:** ex-torrenty.pl
-**Licencja:** GPLv3+
-
----
-
-## Przegląd
-
-`ex_torrenty.py` to wtyczka w Pythonie, która pozwala wyszukiwać i pobierać torrenty z [EX-Torrenty](https://ex-torrenty.org/) poprzez ich API.
-Wtyczka pobiera metadane torrentów i obsługuje pobieranie plików `.torrent` z użyciem ciasteczek sesyjnych do autoryzacji.
-
-Wtyczka wykorzystuje z **`novaprinter`**, zgodnie z dokumentacją QtBiTorent** 
+**Plugin Version:** 3.3  
+**Documentation Version:** 1.01  
+**Author:** KordianJ (5c0rp10n) kordian2025@gmail.com  
+**Co-Author:** powerzasty  
+**Acknowledgments:** ex-torrenty.com  
+**License:** GPLv3+  
+**Last Modified:** 15.10.2025
 
 ---
 
-## Dołączone pliki
+## Overview
 
-Wtyczka korzysta z następujących modułów pomocniczych, dostarczonych pierwotnie przez **QtBiTorent**:
+`ex_torrenty.py` is a Python plugin that allows searching and downloading torrents from [EX-Torrenty](https://ex-torrenty.org/) through their API.  
+The plugin retrieves torrent metadata and supports downloading `.torrent` files using session cookies for authentication.
 
-* `helpers.py` 
-* `nova2.py` 
-* `nova2dl.py` 
-* `novaprinter.py` 
-* `socks.py` 
-
-> ⚠️ Zaleca się sprawdzenie, czy nie istnieją nowsze wersje tych plików przed użyciem.
-
-Dodatkowo załączony jest katalog install gdzie znajduję skrypt python generujący ciasteczka. 
----
-
-## Dokumentacja Oficjalna
-
-Oficjalna dokumentacja tworzenia wtyczek, jest dostępna na GitHubie:
-
-[Dokumentacja plugin-ów QtBiTorent](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin)
+The plugin is built on **`novaprinter`**, following the **qBittorrent plugin documentation**.
 
 ---
 
-## Wymagania
+## Included Files
 
-Nie ma konieczności instalowania dodatkowych pakietów, jeśli wtyczka ma być używana w podstawowej formie. Wystarczy zainstalować zgodnie z dokuemtnacją QtBiTorent. Plik requiments dodany dla wygody. 
+The plugin uses the following helper modules originally provided by **qBittorrent**:
+
+* `helpers.py`  
+* `nova2.py`  
+* `nova2dl.py`  
+* `novaprinter.py`  
+* `socks.py`  
+
+> ⚠️ It is recommended to check if newer versions of these files are available before use.
+
+Additionally, an `install` directory is included, containing a Python script for generating cookies.
 
 ---
 
-## Konfiguracja – Ciasteczka
+## Official Documentation
 
-⚠️ **Ważne:** Aby wtyczka działała, musisz podać **ciasteczka sesyjne z własnego konta EX-Torrenty**.
+Official documentation for creating search plugins is available on GitHub:
 
-1. Zaloguj się na [EX-Torrenty](https://ex-torrenty.org/) w przeglądarce.
-2. Pobierz następujące ciasteczka z sesji:
+[qBittorrent Plugin Documentation](https://github.com/qbittorrent/search-plugins/wiki/How-to-write-a-search-plugin)
 
-   * `uid`
-   * `pass`
-   * `hashv`
-   * `PHPSESSID`
-3. Zamień wartości w słowniku `COOKIES` w pliku `ex_torrenty.py` na swoje ciasteczka. Przykład:
+---
+
+## Requirements
+
+No additional Python packages are required if the plugin is used in its basic form.  
+Installation can be done according to the official qBittorrent documentation.  
+A `requirements.txt` file is included for convenience.
+
+---
+
+## Configuration – Session Cookies
+
+⚠️ **Important:** To use this plugin, you must provide **session cookies from your EX-Torrenty account**.
+
+1. Log in to [EX-Torrenty](https://ex-torrenty.org/) using your browser.  
+2. Retrieve the following session cookies:
+
+   * `uid`  
+   * `pass`  
+   * `hashv`  
+   * `PHPSESSID`  
+
+3. Replace the values in the `COOKIES` dictionary in `ex_torrenty.py` with your own session cookies. Example:
 
 ```python
 COOKIES = {
@@ -68,34 +74,34 @@ COOKIES = {
 }
 ```
 
-> Wtyczka nie będzie działać bez poprawnych ciasteczek sesyjnych.
+> The plugin will not work without valid session cookies.
 
 ---
 
-### Automatyczny generator ciasteczek
+### Automatic Cookie Generator
 
-W katalogu `install/` znajduje się skrypt pomocniczy, który generuje plik JSON z odpowiednimi ciasteczkami dla Twojej sesji:
+In the `install/` directory, you will find a helper script that generates a JSON file with the required session cookies:
 
-* `instalator.py` 
+* `instalator.py`
 
-potrzebne do uruchomienia pakiety to:
+Required Python packages to run this script:
 
-* `beautifulsoup4>=4.12.0`
+* `beautifulsoup4>=4.12.0`  
 * `selenium>=4.21.0`
 
 ---
 
-## Użytkowanie poza QtBiTorent**
+## Usage Outside qBittorrent
 
-Wtyczke można przetestować w terminalu. 
-Pierwszy wynik wyszukiwania jest pobierany automatycznie 
+The plugin can also be tested directly in the terminal.  
+The first search result will be downloaded automatically.
 
 ---
 
-## Licencja
+## License
 
-Wtyczka jest wydana na **licencji GPLv3+**.
-Możesz ją używać, modyfikować i rozpowszechniać.
-Korzystasz na własne ryzyko.
+The plugin is released under the **GPLv3+ license**.  
+You may use, modify, and distribute it freely.  
+Use it at your own risk.
 
-> ⚠️ Użytkownicy są odpowiedzialni za legalność pobierania treści w swoim kraju.
+> ⚠️ Users are responsible for ensuring the legality of downloading content in their country.
