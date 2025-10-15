@@ -1,7 +1,7 @@
 # Wtyczka EX-Torrenty
 
 
-**Wersja Wtyczki:** 3.3
+**Wersja Wtyczki:** 3.3.1
 **Wersja Dokumentacji 1.01
 **Autor:** KordianJ (5c0rp10n) kordian2025@gmail.com
 **Współautor:** powerzasty
